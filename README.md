@@ -32,8 +32,6 @@ ETH矿池代理中转最新程序`hellominer`。
 ## 安装方式
 
 `重要提示：因为会用到iptables，ipset，自动调整系统ulimit连接数限制，所有安装方式都需要root账号权限。`
-
-
 1.程序启动：`systemctl start hellominer`
 2. 程序停止：`systemctl stop hellominer`
 3. 程序重启：`systemctl restart hellominer`
@@ -44,10 +42,7 @@ ETH矿池代理中转最新程序`hellominer`。
 8. 默认管理端口是`51301`，假设你的vps的IP是，`192.168.1.1`，那么访问：`http://192.168.1.1:51301` 就可以进入管理登录页面，默认密码是：`123456`
    。进入后台后，点击右上角头像可以修改密码。
 
-
-
 ###手动安装
-
 1.下载hellominer.tar.gz
 2. 执行：`mkdir /etc/hellominer` ，创建安装目录。
 3. 把文件`hellominer.tar.gz`放在目录`/etc/hellominer`下面。
