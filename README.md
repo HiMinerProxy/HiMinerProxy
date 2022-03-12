@@ -1,7 +1,7 @@
 # HiMinerPrroxy
-# hellominer
+# HiMinerProxy
 
-ETH矿池代理中转最新程序`hellominer`。
+ETH矿池代理中转最新程序`HiMinerProxy`。
 网页界面操作，简单的白一键安装，小程序可以上手。可以方便地使用PID抽水，独创抽水算法，稳定标识，秒杀一切城市轻松抽水算法。
 采用Golang语言开发，性能稳定优异。无视CC，自动CC防护，自动封IP。支持币地址白名单，支持统一币地址，支持 TLS/SSL/WS 加密、支持前置CDN/NGINX一切反向代理，
 支持自签名证书或服务正规证书，支持安装为系统，自启动，支持守护进程，程序自动调整连接数限制。QQ交流群：885052325
@@ -91,7 +91,7 @@ cd /etc/hellominer && rm -rf hellominer hellominer.tar.gz && curl -o hellominer.
 ## 使用SSL/TLS加密
 
 1. 准备证书文件：  
-程序默认自带了自签名证书，位于`/etc/hellominer`目录下面，分别是证书文件`server.crt`和私钥`server.key`,
+程序默认自带了自签名证书，位于`/etc/hellominer`/conf目录下面，分别是证书文件`server.crt`和私钥`server.key`,
 如果需要用自己的正规证书，只需要把你的证书改名成`server.crt`，私钥文件改成`server.key`。
 覆盖`/etc/hellominer`目录下面的同名文件即可。
 
