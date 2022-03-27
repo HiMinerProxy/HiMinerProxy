@@ -41,7 +41,7 @@ ETH、ETC矿池代理中转最新程序`HiMinerProxy`。
 如果是小白，可以执行下面的一键安装脚本，就把hellominer安装为了系统服务。
 
 ```shell
-curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/install.sh|bash
+bash -c "$(curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/install.sh)" @ install
 ```
 
  1. 程序启动：`systemctl start hellominer`
@@ -59,10 +59,16 @@ curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/install.sh|bash
 更新程序只需要复制下面命令执行即可：
 
 `
-cd /etc/hellominer && rm -rf hellominer hellominer.tar.gz && curl -o hellominer.tar.gz -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/hellominer.tar.gz && tar zxfv hellominer.tar.gz
+bash -c "$(curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/install.sh)" @ update
 `
 
-更新完毕，需要程序重启，执行：`systemctl restart hellominer`
+#### 修改程序配置
+
+hellominer提供了一键配置脚本只需运行：
+
+`
+bash -c "$(curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/tools.sh)"
+`
 
 ### 方式二：手动安装
 
@@ -137,3 +143,22 @@ cd /etc/hellominer && rm -rf hellominer hellominer.tar.gz && curl -o hellominer.
 如果您遇到使用问题，欢迎加入QQ交流群:885052325
 
 飞机群：https://t.me/+X4aM84WUSC5hYjM5
+
+## 算力问题
+- 首先不明白什么是算力，什么是提交份额的小白，请先补充这方面的知识。
+- 其次要明白什么是按着算力百分比抽水，什么是按着提交份额百分比抽水。
+- 抽0.1%的份额，需要的算力不是0.1%，它们之间没有一对一的关系，也没一定的公式计算关系。
+- 0.1%的份额需要的算力和当前总算力有关，和矿机的算力大小占比有关，一般情况0.1%的份额需要的算力比0.1%算力要大。
+- 本软件是抽水是按着份额百分比抽水的，可以精准控制抽水比例。
+- 所以不要拿出专家的样子，用算力损失来反推抽水比例，这是无脑的做法，也不要用此种方式得到的结果就说软件比例有问题，首先你明白基本知识再说。
+
+## 测试问题
+1. 测试结论和时间，抽水是要时间的，稳定比例也需要时间，着急的`专家`不要上来几分钟，十来分钟，就说这结果不对劲啊？请至少测试1-2小时再看结果情况。
+2. 后台的操作包括矿池修改，抽水账号修改后，需要首页`重载服务`才会生效。
+3. 矿机登录成功，就被断开，具体表现就是矿机不断的登录成功，成功后立刻被断开,然后要看你的IP是否被监控了，顺便科普一下"监控"，它不是封你的IP，也不是重置你的tcp连接，
+它是发现你的连接发送了挖矿登录的数据包，就会"动作"断开你的tcp，此种情况请你更换IP,或者使用ssl。
+4. 矿机直接不能登录，连接超时，应该是IP被屏蔽了，换一个正常IP。
+5. 矿机直接不能登录，连接被重置，应该是IP阻断了（换一个正常IP），或者协议不对（使用正确协议）。
+
+
+
