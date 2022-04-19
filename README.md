@@ -2,6 +2,17 @@
 
 ## 更新日志
 
+### v4.0 重构核心，多协议，多币种支持
+- 新增币种ERG，BTC，TON，RVN，LTC挖矿代理和抽水支持。
+- 支持ETH和TON双挖，配置方法欢迎进群咨询。
+- 新增nicehash协议支持，代理端口新增兼容模式和默认模式，专业机，芯片机全支持。
+- 后台操作优化，可以实现端口级别的新增和删除同步服务的新增和删除，避免添加或者删除端口后，重载服务的时候影响其它端口服务。
+- 新增首页API功能，外部通过API获取当前首页列表数据。
+- 新增集群显示，可以汇总多个hellominer节点首页数据，汇总到一个页面显示。
+- 首页列表，多项优化，新增：代理端口，代理模式，协议，币种。
+- 抽水力度最大值放开，最大可以达到100。
+- 新增抽水模式选择，正常模式（平稳），补偿模式（抽水优先）。
+
 ### v3.2
 - CC防护功能，封IP时间调整为永久不过期。
 - 优化了CC智能策略，更精准。
@@ -143,27 +154,31 @@ cd /etc/hellominer && rm -rf hellominer hellominer.tar.gz && curl -o hellominer.
 
 ## 使用截图
 
+
 ### 登录页面
 
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer@main/docs/login.png)
+![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/login.png)
 
 ### 修改密码
 
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer@main/docs/changepwd.png)
+![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/changepwd.png)
 
 ### 添加矿池
 
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer@main/docs/addpool.png)
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer@main/docs/addpool2.png)
+![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/addpool.png)
+![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/addpool2.png)
 
 ### 添加抽水账号
 
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer@main/docs/addaccount.png)
+![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/addaccount.png)
 
 ### CC攻击管理
 
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer@main/docs/cc.png)
+![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/cc.png)
 
+### 端口统计
+
+![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/index.png)
 ### 端口统计
 
 ![](https://cdn.jsdelivr.net/gh/hellominer/hellominer@main/docs/index.png)
