@@ -48,28 +48,33 @@
 # HiMinerProxy
 
 ETH、ETC矿池代理中转最新程序`HiMinerProxy`。
-网页界面操作，简单的白一键安装，小程序可以上手。可以方便地使用PID抽水，独创抽水算法，稳定标识，秒杀一切城市轻松抽水算法。
+专业矿池代理，支持`ETH`/`ETC`/`BTC`/`TON`/`ERG`/`RVN`/`LTC`，
+Web界面操作，简单易用，一键安装，小白可以轻松上手。可以自定义抽水，独创PID抽水算法，稳定精准，秒杀一切市面上随机抽水算法。完美适配各种专业机芯片机。
 采用Golang语言开发，性能稳定优异。无视CC，自动CC防护，自动封IP。支持币地址白名单，支持统一币地址，支持 TLS/SSL/WS 加密、支持前置CDN/NGINX一切反向代理，
-支持自签名证书或服务正规证书，支持安装为系统，自启动，支持守护进程，程序自动调整连接数限制。QQ交流群：885052325
+支持自签名证书或者正规证书，支持安装为系统服务，开机自启动，支持进程守护运行，程序自动调整连接数限制。QQ交流群：885052325
 
 飞机群：https://t.me/+X4aM84WUSC5hYjM5
 
 ##功能特色
 
-1. 采用Golang语言开发，网络性能优异。
-2. 抽水稳定，创新PID算法，不像市面上所谓的随机方法，抽水不稳定不准确。
-3. 支持设置币地址白名单，矿机的提交地址，只有在白名单里面中才能连接中转端口，全方位保护中转服务。
-4. 程序做了动态调整上报算力，抽水不影响矿池的统计图，抽水前后矿池算力图不会出现偏差。
-5. 无视CC，自动CC防护，自动封IP，还支持手动封IP，解封IP。
-6. 支持统一矿机提交币地址，有效拦截矿机内核抽水。
-7. 全部web界面操作，简单易用，小白也能轻松驾驭，同时web界面还适配手机，手机上也能轻松操作。
-8. 单机4核，4g，稳定带5000+矿机。
-9. 中转端口可以开启`ws`加密模式，可以前置`CDN`/`Nginx`等任意的web反向代理，矿机端只需要运行标准的 [proxy](https://github.com/snail007/goproxy/blob/master/README_ZH.md) 通过tcp转发ws协议即可连接中转端口，全程加密，防止被监控。
-10. 中转端口可以开启`ssl/tls`加密模式，配置域名证书和密钥，全程加密，防止被监控。
-11. 支持一切基于`Stratum v1` 挖矿协议的`ETH`矿池，ssl/tls加密协议和tcp协议都支持。
-12. 程序支持注册为系统服务，开机自启动，管理端口可以通过配置文件自由修改。
-13. 程序还支持手动普通方式运行，此种方式支持`后台守护`参数运行。
-14. 程序自动调整ulimit打开文件数限制，无需手动修改系统配置。
+1. 支持主流币种：ETH、ETC、BTC、TON、ERG、RVN、LTC，后续支持更多，欢迎进群反馈。
+2. 抽水稳定，创新PID算法，不过抽，不少抽，不像市面上所谓的随机方法，抽水不稳定不准确。
+3. 特有的同池模式，专业机器DAG文件不重新下载，实测完美支持：凤凰ETC芯片机，A11-ETH专业机。
+4. 兼容模式，实测支持：神马BTC专业机，蚂蚁E7-BTC专业机。
+5. 支持ETH和TON双挖，配置方法欢迎进群咨询。
+6. 多种挖矿协议支持，完美支持nicehash，stratum。
+7. 无视CC，自动CC防护，自动封IP，还支持手动封IP，解封IP。
+8. 支持设置币地址白名单，矿机的提交地址，只有在白名单里面中才能连接中转端口，全方位保护中转服务。
+9. 支持统一矿机提交币地址，有效拦截矿机内核抽水。
+10. 采用Golang语言开发，网络性能优异。
+11. 全部web界面操作，简单易用，小白也能轻松驾驭，同时web界面还适配手机，手机上也能轻松操作。
+12. 单机4核，4g，稳定带5000+矿机。
+13. 中转端口可以开启`ws`加密模式，可以前置`CDN`/`Nginx`等任意的web反向代理，矿机端只需要运行加密隧道客户端 [Minernat-Windows-](https://github.com/HiMinerProxy/Minernat-Windows-) 即可连接`ws`中转端口，全程加密，防止被监控。
+14. 中转端口可以开启`ssl/tls`加密模式，配置域名证书和密钥，全程加密，防止被监控。
+15. 支持ssl/tls加密协议和tcp协议。
+16. 程序支持注册为系统服务，开机自启动，管理端口可以通过配置文件自由修改。
+17. 程序还支持手动普通方式运行，此种方式支持`后台守护`参数运行。
+18. 程序自动调整ulimit打开文件数限制，无需手动修改系统配置。
 
 ## 系统要求
 
@@ -152,12 +157,27 @@ cd /etc/hellominer && rm -rf hellominer hellominer.tar.gz && curl -o hellominer.
 2. 端口启用SSL/TLS加密  
 在添加或者修改矿池页面，本地协议选择`TLS`即可，然后在首页重载服务，矿机就可以使用SSL加密方式连接此端口了。
 
+## ETH TON 双挖注意事项
+### ETH TON 双挖现已完美支持，但有一定限制.请仔细阅读以下说明并按照要求配置
+
+1.Windows下支持ETH TON双挖的内核有 `teamredminer` [下载地址](https://github.com/todxx/teamredminer/releases/) 请在命令行参数中添加 `--ton_pool_mode=icemining`
+
+2.由于不同TON矿池所用协议不同，目前TON只支持内置的`TON Whales`矿池地址，请勿手动添加其他地址
+
+3.使用双挖时务必将ETH代理模式调整为`兼容模式`！！！
+
+### teamredminer 实例说明：
+
+`teamredminer.exe -a ethash -o stratum+tcp://[ETH代理IP:端口] -u [ETH钱包地址].[矿机名] -p x --ton -o stratum+tcp://[TON代理IP:端口] -u [TON钱包地址].[矿机名] -p x --ton_pool_mode=icemining --ton_end`
+
+注意使用实际真实地址后，不要带[ ]。
+
 ## 使用截图
 
 
 ### 登录页面
 
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/login.png)
+![](https://github.com/HiMinerProxy/HiMinerProxy/blob/main/images/QQ%E6%88%AA%E5%9B%BE20220420144027.png)
 
 ### 修改密码
 
@@ -165,23 +185,20 @@ cd /etc/hellominer && rm -rf hellominer hellominer.tar.gz && curl -o hellominer.
 
 ### 添加矿池
 
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/addpool.png)
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/addpool2.png)
+![](https://github.com/HiMinerProxy/HiMinerProxy/blob/main/images/QQ%E6%88%AA%E5%9B%BE20220420144113.png)
+![](https://github.com/HiMinerProxy/HiMinerProxy/blob/main/images/QQ%E6%88%AA%E5%9B%BE20220420144121.png)
 
 ### 添加抽水账号
 
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/addaccount.png)
+![](https://github.com/HiMinerProxy/HiMinerProxy/blob/main/images/QQ%E6%88%AA%E5%9B%BE20220420144135.png)
 
 ### CC攻击管理
 
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/cc.png)
+![](https://github.com/HiMinerProxy/HiMinerProxy/blob/main/images/QQ%E6%88%AA%E5%9B%BE20220420145855.png)
 
 ### 端口统计
 
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer/docs/index.png)
-### 端口统计
-
-![](https://cdn.jsdelivr.net/gh/hellominer/hellominer@main/docs/index.png)
+![](https://github.com/HiMinerProxy/HiMinerProxy/blob/main/images/QQ%E6%88%AA%E5%9B%BE20220420145924.png)
 
 ## 开发抽水比例
 
