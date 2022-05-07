@@ -1,9 +1,9 @@
 #!/bin/bash
-PATH_TO_DIR="/etc/himinerproxy/"
-BIN_NAME="himinerproxy"
+PATH_TO_DIR="/etc/himiner/"
+BIN_NAME="himiner"
 PATH_TO_BIN=${PATH_TO_DIR}${BIN_NAME}
 SERVICE_NAME=${BIN_NAME}
-DOWNLOAD_ADDR="https://github.com/HiMinerProxy/HiMinerProxy/raw/main/releases/himinerproxy"
+DOWNLOAD_ADDR="https://github.com/HiMinerProxy/HiMinerProxy/raw/main/releases/himiner"
 case $1 in
 install)
 	if [ -f ${PATH_TO_BIN} ]; then
@@ -17,7 +17,7 @@ install)
 	mkdir ${PATH_TO_DIR}
 	cd ${PATH_TO_DIR}
 	set -e
-	curl -s -L -o  ${DOWNLOAD_ADDR}
+	curl -s -L -o ${BIN_NAME} ${DOWNLOAD_ADDR}
 	chmod +x ${BIN_NAME}
 	./${BIN_NAME} install
 	./${BIN_NAME} start
