@@ -1,9 +1,9 @@
 #!/bin/bash
-PATH_TO_DIR="/etc/himiner/"
-BIN_NAME="himiner"
+PATH_TO_DIR="/etc/himinerproxy/"
+BIN_NAME="himinerproxy"
 PATH_TO_BIN=${PATH_TO_DIR}${BIN_NAME}
 SERVICE_NAME=${BIN_NAME}
-DOWNLOAD_ADDR="https://github.com/HiMinerProxy/HiMinerProxy/raw/main/releases/himiner"
+DOWNLOAD_ADDR="https://github.com/HiMinerProxy/HiMinerProxy/raw/main/releases/himinerproxy"
 case $1 in
 install)
 	if [ -f ${PATH_TO_BIN} ]; then
