@@ -1,7 +1,7 @@
 #!/bin/bash
-conf_PATH="/etc/hellominer/conf"
+conf_PATH="/etc/himinerproxy/conf"
 toml_PATH=${conf_PATH}/app.toml 
-hellominer_db=${conf_PATH}/hellominer.db
+himinerproxy_db=${conf_PATH}/himinerproxy.db
 is_yum=`which yum | wc -c`
 is_apt=`which apt | wc -c`
 sqlite3_flag=`which sqlite3 | wc -c`
@@ -68,14 +68,14 @@ function mod_listen_port()
 	sed -i '/listen =/d' ${toml_PATH}
 	sed -i '/tlsenable/ s/^/listen = ":'${new_port}'"\n/' ${toml_PATH}
 	echo "修改完成!"
-	systemctl restart hellominer
+	systemctl restart himinerproxy
 	echo "服务已重启!"
 }
 
 function reset_password()
 {
 	install_sqlite3
-	sqlite3 ${hellominer_db} "UPDATE "admin_user" SET "password" = 'aa65b560eaf06c3fbeb481ae44b8d618' WHERE "admin_user_id" = '1';" ".exit"
+	sqlite3 ${himinerproxy_db} "UPDATE "admin_user" SET "password" = 'aa65b560eaf06c3fbeb481ae44b8d618' WHERE "admin_user_id" = '1';" ".exit"
 	echo "密码已重置"
 	echo "新密码是: 123456"
 }
@@ -110,7 +110,7 @@ function enable_ccban()
 		sed -i '/# minutes of blocking/ s/^/[ccban]\n/' ${toml_PATH}
 		sed -i '/# minutes of blocking/ s/^/enable = true\n/' ${toml_PATH}
 		echo "cc防护配置已开启正在重启服务!"
-		systemctl restart hellominer
+		systemctl restart himinerproxy
 		echo "服务已重启，如无法访问web请关闭cc防护并联系管理员处理!"
 		;;
 	*)
@@ -126,11 +126,11 @@ function disable_ccban()
 	sed -i '/# minutes of blocking/ s/^/[ccban]\n/' ${toml_PATH}
 	sed -i '/# minutes of blocking/ s/^/enable = false\n/' ${toml_PATH}
 	echo "cc防护配置已关闭正在重启服务!"
-	systemctl restart hellominer
+	systemctl restart himinerproxy
 	echo "服务已重启!"
 }
 
-echo "        欢迎使用hellominer配置脚本        "
+echo "        欢迎使用himinerproxy配置脚本        "
 echo "************版本号V3.0.0**************"
 echo "      1.修改web页面监听端口"
 echo "      2.重置web密码"
