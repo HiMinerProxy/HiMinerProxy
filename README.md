@@ -141,18 +141,7 @@ hellominer提供了一键配置脚本只需运行：
 bash -c "$(curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/tools.sh)"
 `
 
-### 方式二：手动安装
 
-  1. 下载hellominer.tar.gz
-  2. 执行：`mkdir /etc/hellominer` ，创建安装目录。
-  3. 把文件`hellominer.tar.gz`放在目录`/etc/hellominer`下面。
-  4. 执行：`cd /etc/hellominer && tar zxfv hellominer.tar.gz && ./hellominer init`
-  5. 执行：`cd /etc/hellominer && ./hellominer` 即可启动，此时是前台运行，关闭ssh后，程序会被关闭，如果一切正常可以加上后台守护参数。
-  6. 步骤5没问题后，建议后台守护方式运行：`cd /etc/hellominer && ./hellominer --daemon --forever --flog null`
-  7. 重启程序执行：`pkill hellominer && cd /etc/hellominer && ./hellominer --daemon --forever --flog null`
-  8. 配置文件目录位于：`/etc/hellominer/conf`,可以通过修改`/etc/hellominer/conf/app.toml`里面的配置，改变程序web管理端口。
-  9. 默认管理端口是`51301`，假设你的vps的IP是，`192.168.1.1`，那么访问：`http://192.168.1.1:51301` 就可以进入管理登录页面，默认密码是：`123456`
-   。进入后台后，点击右上角头像可以修改密码。
 
 #### 更新程序
 
