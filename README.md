@@ -107,7 +107,7 @@ Web界面操作，简单易用，一键安装，小白可以轻松上手。可�
 
 ### 方式一：一键安装
 
-如果是小白，可以执行下面的一键安装脚本，就把hellominer安装为了系统服务。
+如果是小白，可以执行下面的一键安装脚本，就把HiMinerPrroxy安装为了系统服务。
 
 ```shell
 bash -c "$(curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/install.sh)" @ install
@@ -135,23 +135,11 @@ bash -c "$(curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/inst
 
 #### 修改程序配置
 
-hellominer提供了一键配置脚本只需运行：
+HiMinerPrroxy提供了一键配置脚本只需运行：
 
 `
 bash -c "$(curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/tools.sh)"
 `
-
-
-
-#### 更新程序
-
-更新程序只需要复制下面命令执行即可：
-
-`
-cd /etc/hellominer && rm -rf hellominer hellominer.tar.gz && curl -o hellominer.tar.gz -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/hellominer.tar.gz && tar zxfv hellominer.tar.gz
-`
-
-更新完毕，需要程序重启，执行：`pkill hellominer && cd /etc/hellominer && ./hellominer --daemon --forever --flog null`
 
 
 
