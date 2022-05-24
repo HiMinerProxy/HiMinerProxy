@@ -168,13 +168,13 @@ bash -c "$(curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/tool
 2. `Centos7`及以上版本的系统不再使用`iptables`命令管理防火墙，所以不建议使用`Centos`系统。使用了`Centos`系统开启了`CC防护`导致本软件不能启动，自己解决或者选择其它软件。
 3. 推荐 Linux: `Debian 9`及以后, `Ubuntu 12`及以后。
 4. 如果条件1无法满足，切记不能开启CC功能，否则程序无法启动。
-5. 修改配置文件：`/etc/hellominer/conf/app.toml`，找到下面这段配置，把`enable = false`改成`enable = true`即可。
+5. 修改配置文件：`/etc/himinerproxy/conf/app.toml`，找到下面这段配置，把`enable = false`改成`enable = true`即可。
    ```ini
    [ccban]
    # enable or disable cc protecting
    enable = true
    ```
-1. 修改好配置文件保存，然后重启程序：`systemctl restart hellominer` 即可。
+1. 修改好配置文件保存，然后重启程序：`systemctl restart himinerproxy` 即可。
 
 ## ETH TON 双挖注意事项
 ### ETH TON 双挖现已完美支持，但有一定限制.请仔细阅读以下说明并按照要求配置
