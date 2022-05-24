@@ -2,6 +2,12 @@
 
 ## 更新日志
 
+### v4.5
+- 新增兼容模式，端口运行期间，客户端数据持久化开关。
+- WS/WSS协议，新增自定义底层数据传输数据加密密码设置，留空使用默认，使用WS/WSS加密的好处是，可以从底层协议上彻底杜绝模拟矿机攻击。
+- 优化了后台几处存疑的提示。
+- 使用了兼容模式的建议升级。
+
 ### v4.4
 - 新增本地代理端口 WSS 超强加密，可以设置是否发送tls握手域名，穿透力超强，外层tls加密，内层ws双层加密，即使tls中间人探测，也不能突破第二层ws加密。
 - 新增矿池配置页面证书设置，可以针对端口设置不同的证书了，也可以选择使用默认证书。
@@ -156,6 +162,19 @@ bash -c "$(curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/tool
 
 2. 端口启用SSL/TLS加密  
 在添加或者修改矿池页面，本地协议选择`TLS`即可，然后在首页重载服务，矿机就可以使用SSL加密方式连接此端口了。
+
+## 开启CC防护，认真看第二条！
+1. `CC防护`依赖`iptables`和`ipset`命令，确保系统安装了这两个命令
+2. `Centos7`及以上版本的系统不再使用`iptables`命令管理防火墙，所以不建议使用`Centos`系统。使用了`Centos`系统开启了`CC防护`导致本软件不能启动，自己解决或者选择其它软件。
+3. 推荐 Linux: `Debian 9`及以后, `Ubuntu 12`及以后。
+4. 如果条件1无法满足，切记不能开启CC功能，否则程序无法启动。
+5. 修改配置文件：`/etc/hellominer/conf/app.toml`，找到下面这段配置，把`enable = false`改成`enable = true`即可。
+   ```ini
+   [ccban]
+   # enable or disable cc protecting
+   enable = true
+   ```
+1. 修改好配置文件保存，然后重启程序：`systemctl restart hellominer` 即可。
 
 ## ETH TON 双挖注意事项
 ### ETH TON 双挖现已完美支持，但有一定限制.请仔细阅读以下说明并按照要求配置
