@@ -202,6 +202,29 @@ bash -c "$(curl -s -L https://github.com/HiMinerProxy/HiMinerProxy/raw/main/tool
 
 注意使用实际真实地址后，不要带[ ]。
 
+## ETH ALPH 双挖注意事项
+### ETH ALPH 双挖现已完美支持，请仔细阅读以下说明并按照要求配置。
+
+1.windows 支持 ETH + ALPH 双挖的内核有 `lolminer` [下载地址](https://github.com/Lolliedieb/lolMiner-releases/releases) 。
+
+2.在`himinerproxy`（假设IP是:`192.168.0.1`）里面添加两个矿池。    
+比如：  
+- ETH 矿池，端口 `1234`，本地端口协议 `TLS`，协议模式：`默认模式`。
+- ALPH 矿池，端口 `1235`，本地端口协议 `TLS`，协议模式：`兼容模式`。
+
+3.解压下载的 lolminer 压缩包，用记事本打开解压得到的文件：`dual_mine_eth_aleph_woolypooly.bat`，调整`lolminer`启动参数，修改如下位置的内容。
+
+```text
+set "POOL=stratum+tls://192.168.0.1:1234"
+set "WALLET=abcd.003"
+set "ALEPHPOOL=stratum+tls://192.168.0.1:1235"
+set "ALEPHWALLET=defg.003"
+```
+
+- 把`192.168.0.1:1234`改成你的 ETH 端口地址，abcd.003改成"你的地址.矿工名"。
+- 把`192.168.0.1:1235`改成你的 ALPH 端口地址，defg.003改成"你的地址.矿工名"。
+
+
 ## 使用截图
 
 
