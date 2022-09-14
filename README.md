@@ -107,7 +107,7 @@ Web界面操作，简单易用，一键安装，小白可以轻松上手。可�
 
 ##功能特色
 
-1. 支持主流币种： ETH、ETC、BTC、TON、ERG、RVN、LTC、XMR、CFX、KDA，后续支持更多，欢迎进群反馈。
+1. 支持主流币种： ETH、ETC、BTC、TON、ERG、RVN、LTC、XMR、CFX、KDA、ALPH、SERO、FIRO、BEAM，后续支持更多，欢迎进群反馈。
 2. 抽水稳定，创新PID算法，不过抽，不少抽，不像市面上所谓的随机方法，抽水不稳定不准确。
 3. 特有的同池模式，专业机器DAG文件不重新下载，实测完美支持：凤凰ETC芯片机，A11-ETH专业机。
 4. 兼容模式，实测支持：神马BTC专业机，蚂蚁E7-BTC专业机。
