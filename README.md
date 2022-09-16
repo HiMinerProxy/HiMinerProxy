@@ -1,6 +1,9 @@
 # HiMinerPrroxy
 
 ## 更新日志
+### v5.2 
+- 全面正式支持 ETHW 币代理抽水。
+
 ### v5.1
 - 新增 ETHW 币代理抽水，现在k1pool矿池已支持ethw，后面会第一时间增加支持ethw的矿池。
 - 新增 ETF 币代理抽水，现在f2pol已支持ETF，后面会第一时间增加支持ETF的矿池。
